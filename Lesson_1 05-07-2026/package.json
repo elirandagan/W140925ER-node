@@ -1,0 +1,17 @@
+{
+  "name": "lesson_1-05-07-2026",
+  "version": "1.0.0",
+  "description": "First project using node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ."
+  },
+  "author": "Eliran Dagan",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "uuid": "^14.0.1"
+  }
+}
