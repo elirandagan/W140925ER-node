@@ -11,9 +11,10 @@ emitter.on(events.Start, (args) => {
   console.log("The App just started...", args);
 });
 
-emitter.on(events.Start, (args) => {
-  console.log("One More Time - The App just started...", args);
-});
+// Optioanl to have more than one listener per event
+// emitter.on(events.Start, (args) => {
+//   console.log("One More Time - The App just started...", args);
+// });
 
 emitter.on(events.Fire, (args) => {
   console.log("Fire!!");
