@@ -1,0 +1,8 @@
+### Get All Users
+GET http://localhost:8000/api/users
+
+### Get Test Response From Users Route
+GET http://localhost:8000/api/users/test
+
+### Get wrong url
+GET http://localhost:8000/eliran

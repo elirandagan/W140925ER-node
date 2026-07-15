@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "target": "es2025",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "rewriteRelativeImportExtensions": true,
+    "allowImportingTsExtensions": true
+  }
+}
