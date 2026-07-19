@@ -2,7 +2,7 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "target": "es2025",
-    "module": "commonjs",
+    "module": "es6",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,

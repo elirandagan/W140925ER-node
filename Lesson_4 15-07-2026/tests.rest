@@ -6,3 +6,12 @@ GET http://localhost:8000/api/users/test
 
 ### Get wrong url
 GET http://localhost:8000/eliran
+
+### Create new user
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+    "username": "test2",
+    "email": "test@test.com"
+}
