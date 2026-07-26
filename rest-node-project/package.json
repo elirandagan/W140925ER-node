@@ -4,16 +4,19 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon .",
-    "start": "node ."
+    "dev": "dotenvx run -f src/config/.env.development -f src/config/.env nodemon .",
+    "test": "dotenvx run -f src/config/.env.test -f src/config/.env node .",
+    "prod": "dotenvx run -f src/config/.env.production -f src/config/.env node ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.28.2",
   "dependencies": {
+    "@dotenvx/dotenvx": "^2.18.1",
     "chalk": "^6.0.0",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
