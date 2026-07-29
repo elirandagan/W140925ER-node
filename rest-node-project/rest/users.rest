@@ -1,0 +1,30 @@
+### Create/ Add new user
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+
+{
+    "name":{
+        "first": "Israel",
+        "middle": "",
+        "last": "Israeli"
+    },
+    "address":{
+        "street": "test",
+        "city": "test",
+        "country": "test",
+        "state": "test",
+        "houseNumber": 10,
+        "zip": 12345
+    },
+    "image":{
+        "alt": "user-profile",
+        "url": "https://picsum.photos/200/300"
+    },
+    "phone": "0524720544",
+    "email": "e2@e.com",
+    "isBusiness": true,
+    "password": "123456aA!"
+}
+
+### Get All Users
+GET http://localhost:3000/api/v1/users

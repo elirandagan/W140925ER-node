@@ -13,9 +13,7 @@ const app = express();
 app.use(express.json());
 
 // Routes
-// http:localhost:8000/api/v1/users
 app.use("/api/v1/users", usersRouter);
-// http:localhost:8000/api/v1/cards
 app.use("/api/v1/cards", cardsRouter);
 app.use(notFound);
 

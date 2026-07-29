@@ -1,7 +1,7 @@
 import { z } from "zod/v4";
-import { addressSchema } from "./address-schema";
-import { imageSchema } from "./image-schema";
-import { phoneRegex } from "./patterns";
+import { addressSchema } from "./address.ts";
+import { imageSchema } from "./image.ts";
+import { phoneRegex } from "./patterns.ts";
 
 export const cardSchema = z.object({
   title: z.string().min(2).max(100),
