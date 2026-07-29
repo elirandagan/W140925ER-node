@@ -3,6 +3,9 @@ import express from "express";
 import notFound from "./middleware/not-found.ts";
 import usersRouter from "./routes/users.ts";
 import cardsRouter from "./routes/cards.ts";
+import connectDB from "./database/connect.ts";
+
+connectDB();
 
 const app = express();
 
