@@ -5,7 +5,6 @@ const router = Router();
 
 // POST http:localhost:3000/api/v1/users
 router.post("/", async (req, res) => {
-  // TODO: Add error's handler (try/catch)
   // TODO: Check validation using zod schemas
   const userBody = req.body;
 
@@ -20,7 +19,6 @@ router.post("/", async (req, res) => {
 
 // GET http:localhost:3000/api/v1/users
 router.get("/", async (req, res) => {
-  // TODO: Add error's handler (try/catch)
   const users = await UserModel.find();
 
   res.json({ users });

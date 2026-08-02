@@ -4,15 +4,15 @@ Content-Type: application/json
 
 {
     "name":{
-        "first": "Israel",
+        "first": "Israel1",
         "middle": "",
-        "last": "Israeli"
+        "last": "Israeli1",
     },
     "address":{
-        "street": "test",
-        "city": "test",
-        "country": "test",
-        "state": "test",
+        "street": "test1",
+        "city": "test1",
+        "country": "test1",
+        "state": "test1",
         "houseNumber": 10,
         "zip": 12345
     },
@@ -21,7 +21,7 @@ Content-Type: application/json
         "url": "https://picsum.photos/200/300"
     },
     "phone": "0524720544",
-    "email": "e2@e.com",
+    "email": "e21@ee.com",
     "isBusiness": true,
     "password": "123456aA!"
 }

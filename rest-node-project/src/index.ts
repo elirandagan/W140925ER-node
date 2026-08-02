@@ -4,6 +4,7 @@ import notFound from "./middleware/not-found.ts";
 import usersRouter from "./routes/users.ts";
 import cardsRouter from "./routes/cards.ts";
 import connectDB from "./database/connect.ts";
+import { errorHandler } from "./middleware/error-handler.ts";
 
 connectDB();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/cards", cardsRouter);
 app.use(notFound);
+app.use(errorHandler);
 
 const { PORT } = env;
 
