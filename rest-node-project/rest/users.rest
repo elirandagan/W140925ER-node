@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
     "name":{
-        "first": "Israel1",
+        "first": "Noa2",
         "middle": "",
-        "last": "Israeli1",
+        "last": "Noai2"
     },
     "address":{
         "street": "test1",
@@ -14,16 +14,16 @@ Content-Type: application/json
         "country": "test1",
         "state": "test1",
         "houseNumber": 10,
-        "zip": 12345
+        "zip": "12345"
     },
     "image":{
         "alt": "user-profile",
         "url": "https://picsum.photos/200/300"
     },
     "phone": "0524720544",
-    "email": "e21@ee.com",
+    "email": "n2@n.com",
     "isBusiness": true,
-    "password": "123456aA!"
+    "password": "Aa123456!"
 }
 
 ### Get All Users
