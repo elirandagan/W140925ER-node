@@ -1,16 +1,27 @@
-import { Schema } from "mongoose";
+import { Schema, Document, Model } from "mongoose";
 import { type User } from "../../validations/user.ts";
 import { nameDBSchema } from "./name.ts";
 import { addressDBSchema } from "./address.ts";
 import { imageDBSchema } from "./image.ts";
+import { ObjectId } from "mongodb";
 
 export type DBUser = User & {
   isAdmin?: boolean;
   createdAt?: Date;
-  _id: unknown;
+  _id: ObjectId;
 };
 
-export const userDBSchema = new Schema<DBUser>({
+// Methods For Each Document
+export interface IUserDocument extends DBUser, Document {
+  setPassword(password: string): Promise<void>;
+}
+
+// Methods For The Collection
+export interface IUserModel extends Model<IUserDocument> {
+  findByEmail(email: string): Promise<IUserDocument>;
+}
+
+export const userDBSchema = new Schema<DBUser, IUserModel>({
   name: { type: nameDBSchema, required: true },
   address: { type: addressDBSchema, required: true },
   image: {

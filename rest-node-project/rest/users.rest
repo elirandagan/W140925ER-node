@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
     "name":{
-        "first": "Noa2",
+        "first": "A1",
         "middle": "",
-        "last": "Noai2"
+        "last": "A1"
     },
     "address":{
         "street": "test1",
@@ -21,10 +21,19 @@ Content-Type: application/json
         "url": "https://picsum.photos/200/300"
     },
     "phone": "0524720544",
-    "email": "n2@n.com",
+    "email": "a123@a123.com",
     "isBusiness": true,
     "password": "Aa123456!"
 }
 
 ### Get All Users
 GET http://localhost:3000/api/v1/users
+
+### Login user
+POST http://localhost:3000/api/v1/users/login
+Content-Type: application/json
+
+{
+    "email": "n@n.com",
+    "password": "Aa123456!"
+}

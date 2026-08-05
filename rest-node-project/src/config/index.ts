@@ -7,6 +7,7 @@ const envSchema = z.object({
   NODE_ENV: z.enum(["production", "test", "development", "DEFUALT"]),
   LOG_LEVEL: z.enum(["silent", "error", "info", "debug"]).default("info"),
   APP_NAME: z.string().min(1),
+  JWT_SECRET: z.string().min(1, "JWT_SECRET is required"),
 });
 
 const result = envSchema.safeParse(process.env);
