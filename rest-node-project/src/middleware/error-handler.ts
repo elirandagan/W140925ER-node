@@ -3,8 +3,20 @@ import { MongoServerError } from "mongodb";
 import { ZodError } from "zod/v4";
 import env from "../config/index.ts";
 
+const validationErrorNames = [
+  "JOSEError",
+  "JWKInvalid",
+  "JWEInvalid",
+  "JWSInvalid",
+  //... and more
+];
+
 const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
   console.error(err);
+
+  if (err.name && validationErrorNames.includes(err.name)) {
+    res.status(400).json({ name: err.name });
+  }
 
   // Error handler for broken json data
   if (err instanceof SyntaxError) {

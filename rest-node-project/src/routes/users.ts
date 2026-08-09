@@ -1,6 +1,7 @@
 import { Router } from "express";
 import userService from "../services/user-service.ts";
 import { validateLogin, validateUser } from "../middleware/validate.ts";
+import validateToken from "../middleware/validate-token.ts";
 
 const router = Router();
 
@@ -19,7 +20,7 @@ router.post("/", validateUser, async (req, res) => {
 });
 
 // GET http:localhost:3000/api/v1/users
-router.get("/", async (req, res) => {
+router.get("/", validateToken, async (req, res) => {
   const users = await userService.getUsers();
 
   res.json({ users });

@@ -28,6 +28,7 @@ Content-Type: application/json
 
 ### Get All Users
 GET http://localhost:3000/api/v1/users
+Authorization: bearer ayJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im5Abi5jb20iLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNzg2MzAzNTUxLCJpYXQiOjE3ODYyOTYzNTF9._i92Hdm2AApmX3JFV66GFTBN0PMZaoDCcbZ294Ey-eg
 
 ### Login user
 POST http://localhost:3000/api/v1/users/login
