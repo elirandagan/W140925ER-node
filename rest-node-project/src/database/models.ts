@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { DBUser, IUserModel, userDBSchema } from "./schemas/user.ts";
+import {type DBUser, type IUserModel, userDBSchema } from "./schemas/user.ts";
 import { cardDBSchema } from "./schemas/card.ts";
 import authService from "../services/auth-service.ts";
 

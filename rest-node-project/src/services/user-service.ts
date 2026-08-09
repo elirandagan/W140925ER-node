@@ -1,4 +1,4 @@
-import { User as UserRequest } from "../validations/user.ts";
+import { type User as UserRequest } from "../validations/user.ts";
 import { UserModel } from "../database/models.ts";
 import { HttpError } from "../error/custom-error.ts";
 import authService from "./auth-service.ts";

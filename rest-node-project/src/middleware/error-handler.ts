@@ -8,7 +8,7 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
 
   // Error handler for broken json data
   if (err instanceof SyntaxError) {
-    res.status(400).json({
+    return res.status(400).json({
       error: err.name,
       message: "Invalid JSON Format",
       description: err.message,

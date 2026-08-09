@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { SignJWT, JWTPayload, jwtVerify } from "jose";
+import { SignJWT, type JWTPayload, jwtVerify } from "jose";
 import env from "../config/index.ts";
 
 const authService = {
