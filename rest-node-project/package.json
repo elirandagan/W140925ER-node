@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "dotenvx run -f src/config/.env.development -f src/config/.env nodemon .",
+    "dev": "dotenvx run -f src/config/.env.development -f src/config/.env -- nodemon -e ts,json,env .",
     "test": "dotenvx run -f src/config/.env.test -f src/config/.env node .",
     "prod": "dotenvx run -f src/config/.env.production -f src/config/.env node ."
   },

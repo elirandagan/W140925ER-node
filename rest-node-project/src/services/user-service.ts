@@ -1,6 +1,6 @@
 import { type User as UserRequest } from "../validations/user.ts";
 import { UserModel } from "../database/models.ts";
-import { HttpError } from "../error/custom-error.ts";
+import { HttpError, NotFoundError } from "../error/custom-error.ts";
 import authService from "./auth-service.ts";
 
 const userService = {
@@ -18,6 +18,24 @@ const userService = {
   },
   getUsers: async () => {
     return await UserModel.find({}, { password: 0 });
+  },
+  getUser: async (id: string) => {
+    const user = await UserModel.findById(id);
+    if (!user) {
+      throw new NotFoundError("No such user found");
+    }
+
+    return user;
+  },
+  updateUser: async (id: string, userData: Partial<UserRequest>) => {
+    const user = await UserModel.findByIdAndUpdate({ _id: id }, userData, {
+      new: true,
+    });
+
+    if (!user) {
+      throw new NotFoundError("No such user found");
+    }
+    return user;
   },
   login: async (email: string, password: string) => {
     // Check if user exist

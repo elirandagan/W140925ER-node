@@ -28,7 +28,6 @@ const validateToken: RequestHandler = async (req, res, next) => {
   }
 
   req.user = user;
-
   next();
 };
 
