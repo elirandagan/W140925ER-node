@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
-import {type DBUser, type IUserModel, userDBSchema } from "./schemas/user.ts";
+import { type DBUser, type IUserModel, userDBSchema } from "./schemas/user.ts";
 import { cardDBSchema } from "./schemas/card.ts";
 import authService from "../services/auth-service.ts";
+import { logger } from "../logs/logger.ts";
 
 // Method For Document
 // this equals to the Document instance
 userDBSchema.methods.setPassword = async function (password: string) {
-  console.log("Setting Password for user: ", this.email);
+  logger.info(`Setting Password for user: ${this.email}`);
   this.password = await authService.hashPassword(password);
   return this.save();
 };
@@ -14,7 +15,7 @@ userDBSchema.methods.setPassword = async function (password: string) {
 // Method For Collection
 // this equals to the collection itself
 userDBSchema.statics.findByEmail = async function (email: string) {
-  console.log("Find user using email: ", email);
+  logger.info(`Find user using email: ${email}`);
   return this.findOne({ email });
 };
 

@@ -45,4 +45,11 @@ router.put("/:id", validateUserUpdate, ...isOwnerOrAdmin, async (req, res) => {
   res.json({ user });
 });
 
+// DELETE http://localhost:3000/api/v1/users/{id}
+router.delete("/:id", ...isOwnerOrAdmin, async (req, res) => {
+  const user = await userService.deleteUser(req.params.id as string);
+
+  res.json({ user });
+});
+
 export default router;

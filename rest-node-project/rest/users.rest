@@ -29,7 +29,7 @@ Content-Type: application/json
 
 ### Get All Users
 GET http://localhost:3000/api/v1/users
-Authorization: bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im5Abi5jb20iLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNzg2NTU1NzA3LCJpYXQiOjE3ODY1NDg1MDd9.OtDVQ24k-3XK9UtpwmkF3Yh_e5fIG6V5YapOijprLfg
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im5Abi5jb20iLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3ODY5MDEwODksImlhdCI6MTc4Njg5Mzg4OX0.VdiZMt3YGCxp7wMw1vz4hBBk_3FAdyqknTf91a85BpI
 
 ### Login user
 POST http://localhost:3000/api/v1/users/login
@@ -56,3 +56,8 @@ Content-Type: application/json
         "last": "Almoni"
     }
 }
+
+
+### Delete user
+DELETE http://localhost:3000/api/v1/users/6a6f74656b791bd7293f025a
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im5Abi5jb20iLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3ODY5MDEwODksImlhdCI6MTc4Njg5Mzg4OX0.VdiZMt3YGCxp7wMw1vz4hBBk_3FAdyqknTf91a85BpI

@@ -12,7 +12,9 @@ const validationErrorNames = [
 ];
 
 const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
-  console.error(err);
+  req.log.error(err);
+
+  res.err = err;
 
   if (err.name && validationErrorNames.includes(err.name)) {
     res.status(400).json({ name: err.name });

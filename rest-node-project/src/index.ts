@@ -5,10 +5,16 @@ import usersRouter from "./routes/users.ts";
 import cardsRouter from "./routes/cards.ts";
 import connectDB from "./database/connect.ts";
 import { errorHandler } from "./middleware/error-handler.ts";
+// import morgan from "morgan";
+import { httpLogger, logger } from "./logs/logger.ts";
 
 connectDB();
 
 const app = express();
+
+// Request logger
+// app.use(morgan("[:method]: :url , :status - :response-time ms"));
+app.use(httpLogger);
 
 // Middleware body parse
 app.use(express.json());
@@ -22,5 +28,5 @@ app.use(errorHandler);
 const { PORT } = env;
 
 app.listen(PORT, () => {
-  console.log(`Server runs on: http://localhost:${PORT}`);
+  logger.info(`Server runs on: http://localhost:${PORT}`);
 });

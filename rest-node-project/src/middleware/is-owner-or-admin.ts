@@ -3,9 +3,6 @@ import validateToken from "./validate-token.ts";
 import { HttpError } from "../error/custom-error.ts";
 
 const isOwnerOrAdminHandler: RequestHandler = (req, res, next) => {
-  // console.log(req.user);
-  // console.log(req.params.id);
-  
   // Owner Check
   if (req.user?._id.toString() === req.params.id) {
     return next();

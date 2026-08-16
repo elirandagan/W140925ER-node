@@ -1,11 +1,12 @@
 import env from "../config/index.ts";
+import { logger } from "../logs/logger.ts";
 
 const initDB = async () => {
   if (env.NODE_ENV !== "production") {
-    console.log("Intilizing Database...");
+    logger.info("Intilizing Database...");
     // TODO: Add some users
     // TODO: Add some cards
-    console.log("Database initialized successfully");
+    logger.info("Database initialized successfully");
   }
 };
 
