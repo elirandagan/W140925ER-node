@@ -2,13 +2,14 @@ import { Schema } from "mongoose";
 import { type Card } from "../../validations/card.ts";
 import { addressDBSchema } from "./address.ts";
 import { imageDBSchema } from "./image.ts";
+import { ObjectId } from "mongodb";
 
 export type DBCard = Card & {
   userId: string;
   bizNumber: number;
   likes: Array<string>;
   createdAt?: Date;
-  _id: unknown;
+  _id: ObjectId;
 };
 
 export const cardDBSchema = new Schema<DBCard>({

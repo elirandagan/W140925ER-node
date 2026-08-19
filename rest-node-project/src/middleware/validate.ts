@@ -2,6 +2,7 @@ import { type RequestHandler } from "express";
 import { type ZodType } from "zod/v4";
 import { userSchema } from "../validations/user.ts";
 import { loginSchema } from "../validations/login.ts";
+import { cardSchema } from "../validations/card.ts";
 
 // Generic validator middlware for client-schema
 export function validateSchema<T>(
@@ -15,4 +16,5 @@ export function validateSchema<T>(
 
 export const validateUser = validateSchema(userSchema);
 export const validateLogin = validateSchema(loginSchema);
-export const validateUserUpdate = validateSchema(userSchema.partial())
+export const validateUserUpdate = validateSchema(userSchema.partial());
+export const validateCard = validateSchema(cardSchema);
